@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sổ ghi chú lịch</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>📒 Sổ ghi chú lịch</h1>
+    <span id="clock"></span>
+    <button id="hb">🕘 Lịch sử</button>
+    <span id="st"></span>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="nav">
+        <button id="pv">◀</button>
+        <b id="mt"></b>
+        <button id="nx">▶</button>
+        <button id="td">Hôm nay</button>
+      </div>
+      <div class="grid" id="cal"></div>
+    </section>
+
+    <section class="card">
+      <h2 id="dt"></h2>
+      <div class="bar">
+        <button class="pri" data-a="note">＋ Ghi chú</button>
+        <button class="pri" data-a="todo">＋ Checklist</button>
+        <button class="pri" data-a="image">＋ Ảnh</button>
+        <button class="pri" data-a="draw">＋ Vẽ</button>
+        <button id="dd" class="dg">🗑 Xóa cả ngày</button>
+      </div>
+      <div id="day"></div>
+    </section>
+  </main>
+
+  <!-- Cửa sổ lịch sử -->
+  <div id="hm" hidden>
+    <div class="card mc">
+      <div class="ih">
+        <b class="mtitle">🕘 Lịch sử</b>
+        <button id="hx">Đóng</button>
+      </div>
+      <input type="text" id="hq" placeholder="Tìm theo nội dung hoặc ngày (vd: 13/10/2026)…">
+      <div id="hl"></div>
+      <div class="mfoot"><button id="ha" class="dg">🗑 Xóa toàn bộ dữ liệu</button></div>
+    </div>
+  </div>
+
+  <input type="file" id="file" accept="image/*" hidden>
+
+  <!-- Thứ tự nạp quan trọng: tiện ích → lưu trữ → các chức năng → khởi động -->
+  <script src="/static/js/utils.js"></script>
+  <script src="/static/js/storage.js"></script>
+  <script src="/static/js/calendar.js"></script>
+  <script src="/static/js/items.js"></script>
+  <script src="/static/js/history.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
